@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: step1 --filein root://cms-xrd-global.cern.ch///store/user/yohay/DIRNAME/HHMASS_aAMASS_2mu2tau_RECO_NEVENTSEvts_JOBNUM.root --fileout file:HHMASS_aAMASS_2mu2tau_reHLT_NEVENTSEvts_JOBNUM.root --mc --eventcontent AODSIM --datatier AODSIM --processName HLT2 --inputCommands keep *,drop *_TriggerResults_*_HLT,drop *_hltTriggerSummaryAOD_*_HLT,drop *_hltGtStage2ObjectMap_*_HLT,drop *_l1extraParticles_*_RECO,drop L1GlobalTriggerReadoutRecord_gtDigis_*_RECO,drop *_cscSegments_*_RECO,drop *_dt4DSegments_*_RECO,drop *_rpcRecHits_*_RECO --conditions 80X_mcRun2_asymptotic_v14 --customise_commands process.AODSIMoutput.outputCommands.append('drop L1GlobalTriggerReadoutRecord_gtDigis_*_HLT2') --step L1REPACK:FullMC,HLT:25ns10e33_v2,RAW2DIGI:L1TRawToDigi --era Run2_2016 --python_filename 2mu2tau_reHLT.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n NEVENTS
+# with command line options: step1 --filein root://cms-xrd-global.cern.ch///store/user/USERNAME/DIRNAME/HHMASS_aAMASS_2mu2tau_RECO_NEVENTSEvts_JOBNUM.root --fileout file:HHMASS_aAMASS_2mu2tau_reHLT_NEVENTSEvts_JOBNUM.root --mc --eventcontent AODSIM --datatier AODSIM --processName HLT2 --inputCommands keep *,drop *_TriggerResults_*_HLT,drop *_hltTriggerSummaryAOD_*_HLT,drop *_hltGtStage2ObjectMap_*_HLT,drop *_l1extraParticles_*_RECO,drop L1GlobalTriggerReadoutRecord_gtDigis_*_RECO,drop *_cscSegments_*_RECO,drop *_dt4DSegments_*_RECO,drop *_rpcRecHits_*_RECO --conditions 80X_mcRun2_asymptotic_v14 --customise_commands process.AODSIMoutput.outputCommands.append('drop L1GlobalTriggerReadoutRecord_gtDigis_*_HLT2') --step L1REPACK:FullMC,HLT:25ns10e33_v2,RAW2DIGI:L1TRawToDigi --era Run2_2016 --python_filename 2mu2tau_reHLT.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n NEVENTS
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
@@ -30,7 +30,7 @@ process.maxEvents = cms.untracked.PSet(
 # Input source
 process.source = cms.Source("PoolSource",
     dropDescendantsOfDroppedBranches = cms.untracked.bool(False),
-    fileNames = cms.untracked.vstring('root://cms-xrd-global.cern.ch///store/user/yohay/DIRNAME/HHMASS_aAMASS_2mu2tau_RECO_NEVENTSEvts_JOBNUM.root'),
+    fileNames = cms.untracked.vstring('root://cms-xrd-global.cern.ch///store/user/USERNAME/DIRNAME/HHMASS_aAMASS_2mu2tau_RECO_NEVENTSEvts_JOBNUM.root'),
     inputCommands = cms.untracked.vstring('keep *', 
         'drop *_TriggerResults_*_HLT', 
         'drop *_hltTriggerSummaryAOD_*_HLT', 

@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: step2 --filein root://cms-xrd-global.cern.ch///store/user/yohay/DIRNAME/HHMASS_aAMASS_2mu2tau_DIGI-HLT_NEVENTSEvts_JOBNUM.root --fileout file:HHMASS_aAMASS_2mu2tau_RECO_NEVENTSEvts_JOBNUM.root --mc --eventcontent RAWAODSIM,DQM --runUnscheduled --datatier RAWAODSIM,DQMIO --conditions 80X_mcRun2_asymptotic_2016_v3 --step RAW2DIGI,L1Reco,RECO,EI,DQM:DQMOfflinePOGMC --era Run2_25ns --python_filename 2mu2tau_RECO.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n NEVENTS
+# with command line options: step2 --filein root://cms-xrd-global.cern.ch///store/user/USERNAME/DIRNAME/HHMASS_aAMASS_2mu2tau_DIGI-HLT_NEVENTSEvts_JOBNUM.root --fileout file:HHMASS_aAMASS_2mu2tau_RECO_NEVENTSEvts_JOBNUM.root --mc --eventcontent RAWAODSIM,DQM --runUnscheduled --datatier RAWAODSIM,DQMIO --conditions 80X_mcRun2_asymptotic_2016_v3 --step RAW2DIGI,L1Reco,RECO,EI,DQM:DQMOfflinePOGMC --era Run2_25ns --python_filename 2mu2tau_RECO.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n NEVENTS
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
@@ -30,7 +30,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('root://cms-xrd-global.cern.ch///store/user/yohay/DIRNAME/HHMASS_aAMASS_2mu2tau_DIGI-HLT_NEVENTSEvts_JOBNUM.root'),
+    fileNames = cms.untracked.vstring('root://cms-xrd-global.cern.ch///store/user/USERNAME/DIRNAME/HHMASS_aAMASS_2mu2tau_DIGI-HLT_NEVENTSEvts_JOBNUM.root'),
     secondaryFileNames = cms.untracked.vstring()
 )
 
